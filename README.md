@@ -9,6 +9,6 @@ Installation:
 
 Run the package:
     library("DTCFinder")
-    DTCFinder("SCLC_BPMC", pvalue = 1e-8, seed = 123, titl e= "Test Sample")
+    DTCFinder("SCLC_BPMC", pvalue = 1e-8, seed = 123, title = "Test Sample")
 
-Please contact Wei Wei for an authentication token at wwei@systemsbiology.org
+To install the package, please contact Wei Wei for an authentication token at wwei@systemsbiology.org
