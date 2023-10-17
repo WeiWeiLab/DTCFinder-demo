@@ -4,8 +4,7 @@ DTCFinder is an R package tool to identify disseminated tumor cells. A cell can 
 Installation:  
     devtools::install_github("WeiWeiLan/DTCFinder",
                              ref = "master",
-                             auth_token = "......")                          
-                            )
+                             auth_token = "......")
 
 Run the package:
     library("DTCFinder")
