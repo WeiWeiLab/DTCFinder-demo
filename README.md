@@ -54,7 +54,7 @@ A summary plot will be generated as follows, and output to a png file. An expres
 
 ![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/output.png?raw=true)
 
-the difference between numbers of immune cells and DTCs can be shown by a histogram, using
+The difference between numbers of immune cells and DTCs can be shown by a histogram, using
 
     DTCPlot(M, title="LUAD, PBMC")
 
@@ -67,35 +67,67 @@ The origin of DTCs can be calculated by using
 The following list is output
 
 "Prediction: LUAD"
+
       Prediction
+
 LUAD  0.59289214
+
 LUSC -0.75417122
+
 SCLC -0.70157168
+
 ACC  -0.89046105
+
 BLCA -0.85445353
+
 BRCA -0.55309393
+
 CESC -0.50433343
+
 CHOL -0.55257435
+
 COAD -0.86942346
+
 GBM  -1.63532972
+
 HNSC -0.83486803
+
 KICH -0.73387129
+
 KIRP -0.65473305
+
 KIRC -1.05032990
+
 LGG  -0.56651189
+
 LIHC -0.72998782
+
 MESO -1.02252912
+
 OV   -1.21711166
+
 PAAD -1.74405036
+
 PCPG -0.85117228
+
 PRAD -1.09686805
+
 READ -0.90917633
+
 SARC -0.91576885
+
 SKCM -0.96411297
+
 STAD -0.09367624
+
 TGCT -1.14385551
+
 THCA -0.12498131
+
 THYM -1.14346096
+
 UCEC -1.10233538
+
 UCS  -1.09680587
+
 UVM  -0.59709604
