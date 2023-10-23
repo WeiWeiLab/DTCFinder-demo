@@ -68,8 +68,6 @@ The following list is output
 
 "Prediction: LUAD"
 
-      Prediction
-
 LUAD  0.59289214
 
 LUSC -0.75417122
