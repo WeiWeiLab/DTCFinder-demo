@@ -40,22 +40,62 @@ and model_parameters (model parameters for baseline histogram distribution, assu
 # Demo
 An example of dataset LUAD_PBMC is included in DTCFinder package for testing. LUAD_PBMC is a data frame with over 30000 features (genes) and 300 variables (cells). Running the following testing can take about an hour, dependent on the hardware and network environment.
 
-  library("DTCFinder")
+    library("DTCFinder")
 
 load an UMI matrix of a PBMC sample of a LUAD patient
 
-  data("SCLC_PBMC_300")
+    data("LUAD_PBMC")
 
 Run DTCFinder. If the cell number is larger than 10000, it will take much longer to load the data.  
 
-  M = DTCFinder("SCLC_PBMC_300", seed = 10003, p_value = 1e-8, title = "LUAD, PBMC")
+    M = DTCFinder("LUAD_PBMC", seed = 10003, p_value = 1e-8, title = "LUAD, PBMC")
 
 A summary plot will be generated as follows, and output to a png file. An expression matrix of putative DTCs (DTC_expr.txt), an inferred CNA table for CDTs over bins (CNAs.txt), a CNA correlation matrix of DTCs (correlation.txt), and a prediction list of DTCs origin (prediction.txt) are also generated.
 
 ![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/output.png?raw=true)
 
-  DTCPlot(M, title="LUAD, PBMC")
+the difference between numbers of immune cells and DTCs can be shown by a histogram, using
 
- DTCHeatmap(M, title="LUAD, PBMC")
+    DTCPlot(M, title="LUAD, PBMC")
 
- predictor = prediction(M$Data, M$DTCs, method="min")
+![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/histogram.png?raw=true)
+
+The origin of DTCs can be calculated by using
+
+    (prediction(M$Data, M$DTCs))
+
+The following list is output
+
+"Prediction: LUAD"
+      Prediction
+LUAD  0.59289214
+LUSC -0.75417122
+SCLC -0.70157168
+ACC  -0.89046105
+BLCA -0.85445353
+BRCA -0.55309393
+CESC -0.50433343
+CHOL -0.55257435
+COAD -0.86942346
+GBM  -1.63532972
+HNSC -0.83486803
+KICH -0.73387129
+KIRP -0.65473305
+KIRC -1.05032990
+LGG  -0.56651189
+LIHC -0.72998782
+MESO -1.02252912
+OV   -1.21711166
+PAAD -1.74405036
+PCPG -0.85117228
+PRAD -1.09686805
+READ -0.90917633
+SARC -0.91576885
+SKCM -0.96411297
+STAD -0.09367624
+TGCT -1.14385551
+THCA -0.12498131
+THYM -1.14346096
+UCEC -1.10233538
+UCS  -1.09680587
+UVM  -0.59709604
