@@ -19,6 +19,9 @@ The installation can take about 10 minutes, dependent on the hardware and networ
 
 #
 # Usage
+
+To run DTCFinder, simply type in
+
     DTCFinder(PathToData, seed, p_value, bin_size, title)
 
 where PathToData can be one of these inputs: a folder of sparse data matrices from the 10x Genomics Cell Ranger either Version 3 or 2, with barcodes.tsv, features.tsv (or genes.tsv), and matrix.mtx.gz (or matrix.mtx);
@@ -38,6 +41,7 @@ and model_parameters (model parameters for baseline histogram distribution, assu
 
 #
 # Demo
+
 An example of dataset LUAD_PBMC is included in DTCFinder package for testing. LUAD_PBMC is a data frame with over 30000 features (genes) and 300 variables (cells). Running the following testing can take about an hour, dependent on the hardware and network environment.
 
     library("DTCFinder")
@@ -46,19 +50,29 @@ load an UMI matrix of a PBMC sample of a LUAD patient
 
     data("LUAD_PBMC")
 
-Run DTCFinder. If the cell number is larger than 10000, it will take much longer to load the data.  
+Run DTCFinder. If the cell number is larger than 10000, it will take much longer to load and filter the data.  
 
     M = DTCFinder("LUAD_PBMC", seed = 10003, p_value = 1e-8, title = "LUAD, PBMC")
 
 A summary plot will be generated as follows, and output to a png file. An expression matrix of putative DTCs (DTC_expr.txt), an inferred CNA table for CDTs over bins (CNAs.txt), a CNA correlation matrix of DTCs (correlation.txt), and a prediction list of DTCs origin (prediction.txt) are also generated.
 
-![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/output.png?raw=true)
+![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/plot/output.png?raw=true)
 
-The difference between numbers of immune cells and DTCs can be shown by a histogram, using
+To see how many DTCs have been found, you can check a histogram by using
 
     DTCPlot(M, title="LUAD, PBMC")
 
-![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/histogram.png?raw=true)
+![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/plot/histogram.png?raw=true)
+
+To validate those putative DTCs, you can check their CNAs in a heatmap by using
+
+    DTCHeatmap(M, title="Test")
+
+![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/plot/histogram.png?raw=true)
+
+and compare to the CNA plot derived by using DNA-seqencing profile 
+
+![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/plot/CNV_DNA.png.png?raw=true)
 
 The origin of DTCs can be calculated by using
 
