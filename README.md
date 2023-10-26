@@ -68,11 +68,11 @@ To validate those putative DTCs, you can check their CNAs in a heatmap by using
 
     DTCHeatmap(M, title="Test")
 
-![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/plot/histogram.png?raw=true)
+![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/plot/DTCHeatmap.png?raw=true)
 
 and compare to the CNA plot derived by using DNA-seqencing profile 
 
-![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/plot/CNV_DNA.png.png?raw=true)
+![alt text](https://github.com/WeiWeiLab/DTCFinder-demo/blob/main/plot/CNV_DNA.png?raw=true)
 
 The origin of DTCs can be calculated by using
 
